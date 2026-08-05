@@ -109,13 +109,6 @@ pytest tests/             # runs the unit tests (13 total)
   bucket. **Fix:** switched Q3 to *average days between purchases*
   (purchase cadence) instead of order count, which has real spread
   (207-298 days) and produces a genuinely informative distribution.
-- **Symptom:** an early draft of Q3 used the window function
-  `LAG()` inside the CTE to find each customer's previous invoice
-  date, which works but blurs the line with Q4's window-function
-  requirement. **Fix:** replaced `LAG()` with a correlated subquery
-  (`SELECT MAX(InvoiceDate) WHERE InvoiceDate < ...`) so Q3
-  cleanly demonstrates the CTE/subquery technique on its own, and
-  Q4 is the only place window functions are required.
 - **Symptom:** a naive "top 20% of customers" cutoff for Q1 would
   have been arbitrary and hard to defend to a stakeholder.
   **Fix:** used fixed, interpretable dollar-based tiers (VIP/High/
