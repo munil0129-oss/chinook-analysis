@@ -1,2 +1,16 @@
-__pycache_/ 
-*.pyc 
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Virtual environments
+venv/
+.venv/
+
+# Generated outputs (keep the folder, ignore generated charts)
+outputs/*.png
+
+#data
+data/raw/*.sqlite
+data/cleaned/*.sqlite
