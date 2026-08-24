@@ -13,4 +13,4 @@ outputs/*.png
 
 #data
 data/raw/*.sqlite
-data/cleaned/*.sqlite
+data/cleaned/*.sqlitevenv/
